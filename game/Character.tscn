@@ -22,7 +22,7 @@ width = 256
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 64, 1024 )
+extents = Vector2( 128, 1024 )
 _sections_unfolded = [ "Resource" ]
 
 [node name="Player" type="Node2D" index="0"]
