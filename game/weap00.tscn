@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://weap00.png" type="Texture" id=1]
-[ext_resource path="res://weap03.png" type="Texture" id=2]
-[ext_resource path="res://weap01.png" type="Texture" id=3]
-[ext_resource path="res://weap02.png" type="Texture" id=4]
+[ext_resource path="res://weap04.png" type="Texture" id=1]
+[ext_resource path="res://weap00.png" type="Texture" id=2]
+[ext_resource path="res://weap03.png" type="Texture" id=3]
+[ext_resource path="res://weap01.png" type="Texture" id=4]
+[ext_resource path="res://weap02.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -96,22 +97,31 @@ collision_mask = 1
 collision/safe_margin = 0.08
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+[node name="weap04" type="Sprite" parent="KinematicBody2D" index="0"]
+
+position = Vector2( 6.46321, 1.50687 )
+rotation = -1.41289
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="weap00" type="Sprite" parent="KinematicBody2D" index="1"]
+[node name="weap00" type="Sprite" parent="KinematicBody2D" index="2"]
 
-rotation = -1.74287
-texture = ExtResource( 1 )
+position = Vector2( 2.65369, 1.99025 )
+rotation = -6.25274
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="weap03" type="Sprite" parent="KinematicBody2D/weap00" index="0"]
 
 position = Vector2( 94.7596, -90.8499 )
-rotation = 6.03935
-texture = ExtResource( 2 )
+rotation = 1.88309
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/weap00/weap03" index="0"]
@@ -127,8 +137,8 @@ blend_times = [  ]
 [node name="weap01" type="Sprite" parent="KinematicBody2D/weap00" index="1"]
 
 position = Vector2( -129.547, -19.3044 )
-rotation = 2.89516
-texture = ExtResource( 3 )
+rotation = 5.02212
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="KinematicBody2D/weap00/weap01" index="0"]
 
@@ -143,8 +153,8 @@ blend_times = [  ]
 [node name="weap02" type="Sprite" parent="KinematicBody2D/weap00" index="2"]
 
 position = Vector2( 37.9223, 132.686 )
-rotation = 0.287741
-texture = ExtResource( 4 )
+rotation = 2.41468
+texture = ExtResource( 5 )
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="KinematicBody2D/weap00/weap02" index="0"]
 
