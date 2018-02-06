@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ameba.tscn" type="PackedScene" id=2]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 49920, 1000 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1000, 49920 )
+
+[node name="Main" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -24,6 +34,69 @@ color = Color( 0.34375, 0.128906, 0.128906, 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect" ]
 
 [node name="Walls" type="Node2D" parent="." index="1"]
+
+[node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="UpperCollision" type="CollisionShape2D" parent="Walls/Upper" index="0"]
+
+position = Vector2( 48334.7, -1020.08 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="StaticBody2D" parent="Walls" index="1"]
+
+position = Vector2( 87.2031, 56028.1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="BottomCollision" type="CollisionShape2D" parent="Walls/Bottom" index="0"]
+
+position = Vector2( 48334.7, -1020.08 )
+shape = SubResource( 1 )
+
+[node name="Left" type="StaticBody2D" parent="Walls" index="2"]
+
+position = Vector2( 87.2031, 56028.1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="LeftCollision" type="CollisionShape2D" parent="Walls/Left" index="0"]
+
+position = Vector2( 96978.8, -26362 )
+shape = SubResource( 2 )
+
+[node name="Right" type="StaticBody2D" parent="Walls" index="3"]
+
+position = Vector2( -97974.8, 65118.4 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="LeftCollision" type="CollisionShape2D" parent="Walls/Right" index="0"]
+
+position = Vector2( 96978.8, -26362 )
+shape = SubResource( 2 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 1 )]
 
@@ -58,7 +131,5 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Ameba" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 974.84, 329.742 )
-SPEED = 3000
-ACCELERATION = 0.1
 
 
