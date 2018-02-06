@@ -4,11 +4,14 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
+export (float) var SPEED = 10
+
 var target = null
 var velocity = Vector2(0, 0)
 
 func _ready():
 	self.target = get_player()
+	randomize()
 	print("Here")
 
 func _process(delta):
@@ -16,12 +19,14 @@ func _process(delta):
 	# Update game logic here.
 	var to_target = Vector2()
 	if self.target:
-		to_target = self.target.position - self.position
+		to_target -= self.target.position - self.position
+		print("Found Target")
 	else:
+		print("No Target")
 		to_target += velocity
 		velocity += Vector2(randf() - 0.5, randf() - 0.5)
-	self.position += to_target * delta
+	self.position += to_target * delta * SPEED
 
 
 func get_player():
-	return get_tree().get_root().find_node('Player')
+	return get_tree().get_root().get_node('/Main/Player')
