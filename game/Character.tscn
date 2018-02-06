@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 radius = 177.5
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -62,15 +62,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Joints" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="HammerJoint" type="PinJoint2D" parent="Joints" index="0"]
 
 node_a = NodePath("../../Body")
 node_b = NodePath("../../Hammer")
 bias = 0.0
 disable_collision = true
-softness = 4.0
+softness = 2.0
 
 [node name="Hammer" parent="." index="3" instance=ExtResource( 5 )]
 

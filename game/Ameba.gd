@@ -41,7 +41,7 @@ func _on_Ameba_body_entered(obj):
 		if self.hitpoints < 0:
 			var death = self.amebadeath.instance()
 			self.get_tree().get_root().add_child(death)
-			death.position = self.position
+			death.set_global_position(get_global_position())
 			queue_free()
 		
 	

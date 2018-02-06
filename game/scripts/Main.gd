@@ -2,6 +2,8 @@ extends Node2D
 export (PackedScene) var Ameba
 
 func _ready():
+	$Music.play()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	randomize()
 
 func _on_AmebaTimer_timeout():
