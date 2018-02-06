@@ -86,7 +86,7 @@ tracks/0/keys = {
 "values": [ 0.0, -180.0, -360.0 ]
 }
 
-[node name="Hammer" type="RigidBody2D" index="0"]
+[node name="Hammer" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -124,7 +124,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="weap00" type="Sprite" parent="." index="2"]
 
 position = Vector2( 2.65369, 1.99025 )
-rotation = -1.95458
+rotation = -1.97425
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Transform" ]
@@ -132,11 +132,11 @@ _sections_unfolded = [ "Animation", "Transform" ]
 [node name="weap03" type="Sprite" parent="weap00" index="0"]
 
 position = Vector2( 94.7596, -90.8499 )
-rotation = 1.30114
+rotation = 1.04457
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="weap00/weap03" index="0"]
+[node name="player" type="AnimationPlayer" parent="weap00/weap03" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -149,10 +149,10 @@ blend_times = [  ]
 [node name="weap01" type="Sprite" parent="weap00" index="1"]
 
 position = Vector2( -129.547, -19.3044 )
-rotation = 3.90925
+rotation = 3.66876
 texture = ExtResource( 4 )
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="weap00/weap01" index="0"]
+[node name="player" type="AnimationPlayer" parent="weap00/weap01" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -165,10 +165,10 @@ blend_times = [  ]
 [node name="weap02" type="Sprite" parent="weap00" index="2"]
 
 position = Vector2( 37.9223, 132.686 )
-rotation = 2.53274
+rotation = 0.588441
 texture = ExtResource( 5 )
 
-[node name="AnimationPlayer4" type="AnimationPlayer" parent="weap00/weap02" index="0"]
+[node name="player" type="AnimationPlayer" parent="weap00/weap02" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -178,7 +178,7 @@ playback_speed = 1.0
 anims/rotate = SubResource( 4 )
 blend_times = [  ]
 
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="weap00" index="3"]
+[node name="player" type="AnimationPlayer" parent="weap00" index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -187,5 +187,6 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/rotate = SubResource( 5 )
 blend_times = [  ]
+_sections_unfolded = [ "Pause", "Playback Options" ]
 
 

@@ -45,8 +45,6 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect" ]
 
 [node name="Walls" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
 
 input_pickable = false
@@ -91,7 +89,7 @@ bounce = 0.0
 
 [node name="LeftCollision" type="CollisionShape2D" parent="Walls/Left" index="0"]
 
-position = Vector2( 96978.8, -26362 )
+position = Vector2( 20136.8, -26972.1 )
 shape = SubResource( 2 )
 
 [node name="Right" type="StaticBody2D" parent="Walls" index="3"]
@@ -149,10 +147,13 @@ autostart = true
 
 [node name="AmebaPath" type="Path2D" parent="." index="5"]
 
+editor/display_folded = true
+visible = false
 curve = SubResource( 3 )
 
 [node name="AmebaSpawnPosition" type="PathFollow2D" parent="AmebaPath" index="0"]
 
+position = Vector2( -8.1748, -12.3853 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
