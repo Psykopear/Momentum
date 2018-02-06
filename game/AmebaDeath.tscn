@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ameba00.png" type="Texture" id=1]
+[ext_resource path="res://amdie00.png" type="Texture" id=1]
 [ext_resource path="res://AmebaDeath.gd" type="Script" id=2]
 
 [sub_resource type="Gradient" id=1]
@@ -35,7 +35,7 @@ emission_shape = 0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
-spread = 45.0
+spread = 180.0
 flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 1000.0
@@ -54,7 +54,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 5.0
 scale_random = 1.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
@@ -65,9 +65,9 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Scale" ]
+_sections_unfolded = [ "Scale", "Spread" ]
 
-[node name="AmebaDeath" type="Particles2D"]
+[node name="AmebaDeath" type="Particles2D" index="0"]
 
 emitting = false
 amount = 10
@@ -88,7 +88,7 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Drawing", "Process Material", "Time" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
 [node name="Timer" type="Timer" parent="." index="0"]
 
