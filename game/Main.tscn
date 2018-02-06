@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Character.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ameba.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ameba.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -18,13 +18,14 @@ extents = Vector2( 1000, 49920 )
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, -8.1748, -12.3853, 0, 0, 0, 0, 96004.7, -12.3853, 0, 0, 0, 0, 96039.1, 53971.8, 0, 0, 0, 0, -0.305664, 53954.6, 0, 0, 0, 0, -8.1748, -12.3853 )
 }
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+Ameba = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
@@ -109,7 +110,7 @@ bounce = 0.0
 position = Vector2( 96978.8, -26362 )
 shape = SubResource( 2 )
 
-[node name="Player" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 500, 500 )
 
@@ -139,20 +140,26 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Ameba" parent="." index="4" instance=ExtResource( 3 )]
-
-position = Vector2( 974.84, 329.742 )
-
-[node name="AmebaTimer" type="Timer" parent="." index="5"]
+[node name="AmebaTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
 
-[node name="AmebaPath" type="Path2D" parent="." index="6"]
+[node name="AmebaPath" type="Path2D" parent="." index="5"]
 
 curve = SubResource( 3 )
+
+[node name="AmebaSpawnPosition" type="PathFollow2D" parent="AmebaPath" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
 
 [connection signal="timeout" from="AmebaTimer" to="." method="_on_AmebaTimer_timeout"]
 
