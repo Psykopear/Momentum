@@ -1,5 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Main" type="Node2D"]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ameba.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ameba" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 974.84, 329.742 )
+_sections_unfolded = [ "Transform" ]
 
 
