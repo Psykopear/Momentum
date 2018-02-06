@@ -5,7 +5,7 @@ extends Node2D
 # var b = "textvar"
 
 export (float) var SPEED = 3000
-export (float) var ACCELERATION = 0.1
+export (float) var ACCELERATION = 0.02
 
 var target = null
 var rand_velocity = Vector2(0, 0)
