@@ -2,30 +2,21 @@
 
 [ext_resource path="res://scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://scripts/CharacterBody.gd" type="Script" id=2]
+[ext_resource path="res://char00.png" type="Texture" id=3]
+[ext_resource path="res://char00eye.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 256, 256 )
+radius = 177.5
 
-[sub_resource type="Gradient" id=2]
-
-offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=3]
-
-flags = 4
-gradient = SubResource( 2 )
-width = 256
-
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 128, 1024 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 script = ExtResource( 1 )
 MOUSE = true
@@ -60,10 +51,10 @@ hammer_joint = NodePath("../Joints/HammerJoint")
 
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="Body" index="1"]
+[node name="Body" type="Sprite" parent="Body" index="1"]
 
-scale = Vector2( 1e-05, 1e-05 )
-texture = SubResource( 3 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="Body" index="2"]
@@ -91,6 +82,13 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
+[node name="Eye" type="Sprite" parent="Body" index="3"]
+
+position = Vector2( 100, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Hammer" type="RigidBody2D" parent="." index="1"]
 
 position = Vector2( 0, 2000 )
@@ -116,7 +114,7 @@ _sections_unfolded = [ "Linear", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Shields" type="Node2D" parent="." index="2"]
