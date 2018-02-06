@@ -3,7 +3,7 @@
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ameba.tscn" type="PackedScene" id=2]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 

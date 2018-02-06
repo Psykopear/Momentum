@@ -16,7 +16,7 @@ custom_solver_bias = 0.0
 extents = Vector2( 128, 1024 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 MOUSE = true
@@ -27,10 +27,10 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 2
-mass = 100.0
+mass = 150.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 0.5
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
@@ -62,7 +62,7 @@ _sections_unfolded = [ "Transform" ]
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 20, 20 )
+zoom = Vector2( 10, 10 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -91,15 +91,16 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Hammer" type="RigidBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 0, 2000 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 10.0
+mass = 50.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 2.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
@@ -115,11 +116,13 @@ _sections_unfolded = [ "Linear", "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer" index="0"]
 
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Shields" type="Node2D" parent="." index="2"]
 
 [node name="Joints" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="HammerJoint" type="PinJoint2D" parent="Joints" index="0"]
 
