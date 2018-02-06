@@ -37,7 +37,7 @@ func _process(delta):
 	if _velocity.length() > 1:
 		_velocity = _velocity.normalized()
 	
-	_velocity *= 500000
+	_velocity *= 1000000
 	
 	#if abs(_velocity.x) > max_speed or abs(_velocity.y) > max_speed:
 	#	_velocity = 
