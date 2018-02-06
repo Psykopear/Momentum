@@ -4,16 +4,12 @@
 [ext_resource path="res://scripts/CharacterBody.gd" type="Script" id=2]
 [ext_resource path="res://char00.png" type="Texture" id=3]
 [ext_resource path="res://char00eye.png" type="Texture" id=4]
+[ext_resource path="res://HammerBody.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 177.5
-
-[sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 500.0
 
 [node name="Player" type="Node2D"]
 
@@ -23,6 +19,7 @@ MOUSE = true
 
 [node name="Body" type="RigidBody2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -42,9 +39,6 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 2 )
-min_softness = 0.05
-max_speed = 10000
-SPEED = 5000
 hammer_joint = NodePath("../Joints/HammerJoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="0"]
@@ -64,37 +58,9 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Hammer" type="RigidBody2D" parent="." index="1"]
+[node name="Shields" type="Node2D" parent="." index="1"]
 
-position = Vector2( 0, 1000 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 50.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 2.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-_sections_unfolded = [ "Linear", "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer" index="0"]
-
-shape = SubResource( 2 )
-_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
-
-[node name="Shields" type="Node2D" parent="." index="2"]
-
-[node name="Joints" type="Node2D" parent="." index="3"]
+[node name="Joints" type="Node2D" parent="." index="2"]
 
 editor/display_folded = true
 
@@ -105,5 +71,9 @@ node_b = NodePath("../../Hammer")
 bias = 0.0
 disable_collision = true
 softness = 4.0
+
+[node name="Hammer" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 0, 1000 )
 
 
