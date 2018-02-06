@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 658.734
+radius = 229.241
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -50,8 +50,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AmebaGFX" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 5.97961, 21.3278 )
-scale = Vector2( 5.47004, 5.70977 )
+position = Vector2( -4.63511, 0.761837 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "default"
 frame = 2
