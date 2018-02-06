@@ -18,10 +18,10 @@ extents = Vector2( 1000, 49920 )
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -8.1748, -12.3853, 0, 0, 0, 0, 96004.7, -12.3853, 0, 0, 0, 0, 96039.1, 53971.8, 0, 0, 0, 0, -0.305664, 53954.6, 0, 0, 0, 0, -8.1748, -12.3853 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19200, 0, 0, 0, 0, 0, 19200, 10752, 0, 0, 0, 0, 0, 10624, 0, 0, 0, 0, 0, 0 )
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -44,6 +44,8 @@ color = Color( 0.34375, 0.128906, 0.128906, 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect" ]
 
 [node name="Walls" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
 
@@ -73,7 +75,7 @@ bounce = 0.0
 
 [node name="BottomCollision" type="CollisionShape2D" parent="Walls/Bottom" index="0"]
 
-position = Vector2( 48334.7, -1020.08 )
+position = Vector2( 47144.8, -44252.1 )
 shape = SubResource( 1 )
 
 [node name="Left" type="StaticBody2D" parent="Walls" index="2"]
@@ -147,13 +149,10 @@ autostart = true
 
 [node name="AmebaPath" type="Path2D" parent="." index="5"]
 
-editor/display_folded = true
-visible = false
 curve = SubResource( 3 )
 
 [node name="AmebaSpawnPosition" type="PathFollow2D" parent="AmebaPath" index="0"]
 
-position = Vector2( -8.1748, -12.3853 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
