@@ -124,7 +124,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="weap00" type="Sprite" parent="." index="2"]
 
 position = Vector2( 2.65369, 1.99025 )
-rotation = -1.97425
+rotation = -1.82878
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Transform" ]
@@ -132,7 +132,7 @@ _sections_unfolded = [ "Animation", "Transform" ]
 [node name="weap03" type="Sprite" parent="weap00" index="0"]
 
 position = Vector2( 94.7596, -90.8499 )
-rotation = 1.04457
+rotation = 1.48097
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
@@ -149,7 +149,7 @@ blend_times = [  ]
 [node name="weap01" type="Sprite" parent="weap00" index="1"]
 
 position = Vector2( -129.547, -19.3044 )
-rotation = 3.66876
+rotation = 4.10516
 texture = ExtResource( 4 )
 
 [node name="player" type="AnimationPlayer" parent="weap00/weap01" index="0"]
@@ -165,7 +165,7 @@ blend_times = [  ]
 [node name="weap02" type="Sprite" parent="weap00" index="2"]
 
 position = Vector2( 37.9223, 132.686 )
-rotation = 0.588441
+rotation = 1.02484
 texture = ExtResource( 5 )
 
 [node name="player" type="AnimationPlayer" parent="weap00/weap02" index="0"]
