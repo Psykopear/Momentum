@@ -4,10 +4,11 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
-export (float) var SPEED = 10
+export (float) var SPEED = 3000
+export (float) var ACCELERATION = 0.1
 
 var target = null
-var velocity = Vector2(0, 0)
+var rand_velocity = Vector2(0, 0)
 
 func _ready():
 	self.target = get_player()
@@ -19,14 +20,19 @@ func _process(delta):
 	# Update game logic here.
 	var to_target = Vector2()
 	if self.target:
-		to_target -= self.target.position - self.position
-		print("Found Target")
+		to_target += (get_player().global_position - self.global_position)
 	else:
 		print("No Target")
-		to_target += velocity
-		velocity += Vector2(randf() - 0.5, randf() - 0.5)
-	self.position += to_target * delta * SPEED
+		to_target += rand_velocity
+		rand_velocity += Vector2(randf() - 0.5, randf() - 0.5)
+	
+	to_target = to_target.normalized() * SPEED
+	
+	var force = Vector2()
+	force += (to_target - self.linear_velocity) * ACCELERATION  # Proportional controller
+	self.apply_impulse(Vector2(), force * self.mass)
+	
 
 
 func get_player():
-	return get_tree().get_root().get_node('/Main/Player')
+	return get_tree().get_root().get_node('Main/Player/Body')

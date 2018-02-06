@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 104.899
+radius = 658.734
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -25,8 +25,8 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 1.0
-friction = 1.0
+mass = 0.1
+friction = 0.0
 bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
@@ -40,7 +40,8 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-SPEED = 10
+SPEED = 3000
+ACCELERATION = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -49,9 +50,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AmebaGFX" type="AnimatedSprite" parent="." index="1"]
 
+position = Vector2( 5.97961, 21.3278 )
+scale = Vector2( 5.47004, 5.70977 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
