@@ -20,9 +20,6 @@ func _ready():
 func set_mouse(val):
 	MOUSE = val
 	JOYSTICK = not val
-	if JOYSTICK:
-		get_node("Sprite").set_modulate(Color(0.7, 0.9, 0.5))
-		get_node("Camera2D").queue_free()
 
 func _process(delta):
 	if MOUSE:

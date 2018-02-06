@@ -15,7 +15,8 @@ radius = 177.5
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
-MOUSE = true
+MOUSE = false
+hitpoints = 10
 
 [node name="Body" type="RigidBody2D" parent="." index="0"]
 
@@ -24,14 +25,14 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 2
-mass = 150.0
+mass = 300.0
 friction = 1.0
 bounce = 0.0
 gravity_scale = 0.5
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 2
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -74,6 +75,9 @@ softness = 4.0
 
 [node name="Hammer" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 0, 1000 )
+position = Vector2( 0, 500 )
+mass = 200.0
+
+[connection signal="body_entered" from="Body" to="." method="_on_Body_body_entered"]
 
 

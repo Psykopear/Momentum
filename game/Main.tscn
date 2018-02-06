@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Ameba.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,6 +21,14 @@ bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19200, 0, 0, 0, 0, 0, 19200, 10752, 0, 0, 0, 0, 0, 10624, 0, 0, 0, 0, 0, 0 )
 }
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 500
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -113,6 +122,8 @@ shape = SubResource( 2 )
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 500, 500 )
+MOUSE = true
+hitpoints = 50
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
@@ -160,6 +171,26 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
+
+[node name="ScoreLabel" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1152.0
+margin_bottom = 384.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "HEALTH: 50"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [connection signal="timeout" from="AmebaTimer" to="." method="_on_AmebaTimer_timeout"]
 

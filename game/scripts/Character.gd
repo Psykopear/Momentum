@@ -1,6 +1,7 @@
 extends Node2D
 
 export var MOUSE = true
+export var hitpoints = 50
 
 func _ready():
 	get_node("./Body").set_mouse(MOUSE)
@@ -8,3 +9,10 @@ func _ready():
 	$Hammer/weap00/weap03/player.play("rotate")
 	$Hammer/weap00/weap02/player.play("rotate")
 	$Hammer/weap00/weap01/player.play("rotate")
+
+func _on_Body_body_entered( body ):
+	hitpoints -= 1
+	self.get_parent().get_node("ScoreLabel").text = 'HEALT: %s' % hitpoints
+	if hitpoints <= 0:
+		self.get_parent().get_node("ScoreLabel").text = 'GAME OVER'
+		set_process(false)

@@ -87,7 +87,7 @@ tracks/0/keys = {
 "values": [ 0.0, -180.0, -360.0 ]
 }
 
-[node name="Hammer" type="RigidBody2D" index="0"]
+[node name="Hammer" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
