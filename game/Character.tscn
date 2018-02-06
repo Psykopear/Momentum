@@ -16,7 +16,7 @@ radius = 177.5
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 MOUSE = false
-hitpoints = 10
+hitpoints = 50
 
 [node name="Body" type="RigidBody2D" parent="." index="0"]
 

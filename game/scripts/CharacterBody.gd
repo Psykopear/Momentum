@@ -24,13 +24,13 @@ func set_mouse(val):
 func _process(delta):
 	if MOUSE:
 		var dir_vect = get_global_mouse_position() - self.get_global_position()
-		_velocity = dir_vect * 0.001
+		_velocity = dir_vect * 0.003
 	elif JOYSTICK:
 		var x_axis = Input.get_joy_axis(0,0)
 		var y_axis = Input.get_joy_axis(0,1)
 		_velocity = Vector2(x_axis, y_axis)
 	
-	_velocity *= pow(_velocity.length(), 1.0)
+	_velocity *= pow(_velocity.length(), 3.0)
 	if _velocity.length() > 1:
 		_velocity = _velocity.normalized()
 	
