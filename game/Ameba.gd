@@ -35,13 +35,13 @@ func _process(delta):
 	self.apply_impulse(Vector2(), force * self.mass)
 	
 func _on_Ameba_body_entered(obj):
-	self.hitpoints -= 1
-	print(self.hitpoints)
-	if self.hitpoints < 0:
-		var death = self.amebadeath.instance()
-		self.get_tree().get_root().add_child(death)
-		death.position = self.position
-		queue_free()
+	if obj.name == 'Hammer':
+		self.hitpoints -= 1
+		if self.hitpoints < 0:
+			var death = self.amebadeath.instance()
+			self.get_tree().get_root().add_child(death)
+			death.position = self.position
+			queue_free()
 		
 	
 
