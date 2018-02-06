@@ -35,8 +35,8 @@ MOUSE = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
-mass = 1.0
+mode = 2
+mass = 100.0
 friction = 1.0
 bounce = 0.0
 gravity_scale = 1.0
@@ -71,7 +71,7 @@ _sections_unfolded = [ "Transform" ]
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.2, 0.2 )
+zoom = Vector2( 20, 20 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -93,11 +93,12 @@ editor_draw_drag_margin = false
 
 [node name="Hammer" type="RigidBody2D" parent="." index="1"]
 
+position = Vector2( 0, 2000 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 1.0
+mass = 10.0
 friction = 1.0
 bounce = 0.0
 gravity_scale = 1.0
@@ -111,10 +112,10 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+_sections_unfolded = [ "Linear", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer" index="0"]
 
-position = Vector2( 0, 1500 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
@@ -128,6 +129,6 @@ node_a = NodePath("../../Body")
 node_b = NodePath("../../Hammer")
 bias = 0.0
 disable_collision = true
-softness = 2.0
+softness = 4.0
 
 
