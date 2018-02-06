@@ -10,15 +10,15 @@
 custom_solver_bias = 0.0
 radius = 177.5
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 128, 1024 )
-_sections_unfolded = [ "Resource" ]
+radius = 500.0
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 MOUSE = true
 
 [node name="Body" type="RigidBody2D" parent="." index="0"]
@@ -43,8 +43,8 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 2 )
 min_softness = 0.05
-max_speed = 8000
-SPEED = 4000
+max_speed = 10000
+SPEED = 5000
 hammer_joint = NodePath("../Joints/HammerJoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="0"]
@@ -57,32 +57,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera2D" type="Camera2D" parent="Body" index="2"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 10, 10 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="Eye" type="Sprite" parent="Body" index="3"]
+[node name="Eye" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( 100, 0 )
 scale = Vector2( 2, 2 )
@@ -91,8 +66,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Hammer" type="RigidBody2D" parent="." index="1"]
 
-editor/display_folded = true
-position = Vector2( 0, 2000 )
+position = Vector2( 0, 1000 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
