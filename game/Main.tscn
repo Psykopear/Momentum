@@ -1,19 +1,22 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Ameba.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://wall00.tscn" type="PackedScene" id=5]
+[ext_resource path="res://wall01.tscn" type="PackedScene" id=6]
+[ext_resource path="res://wall02.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 49920, 1000 )
+extents = Vector2( 10000, 1000 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 1000, 49920 )
+extents = Vector2( 1000, 10000 )
 
 [sub_resource type="Curve2D" id=3]
 
@@ -42,8 +45,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 95936.0
-margin_bottom = 53936.0
+margin_right = 19264.0
+margin_bottom = 10944.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -58,6 +61,7 @@ editor/display_folded = true
 
 [node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -68,11 +72,12 @@ bounce = 0.0
 
 [node name="UpperCollision" type="CollisionShape2D" parent="Walls/Upper" index="0"]
 
-position = Vector2( 48334.7, -1020.08 )
+position = Vector2( 9856, -1152 )
 shape = SubResource( 1 )
 
 [node name="Bottom" type="StaticBody2D" parent="Walls" index="1"]
 
+editor/display_folded = true
 position = Vector2( 87.2031, 56028.1 )
 input_pickable = false
 collision_layer = 1
@@ -84,11 +89,12 @@ bounce = 0.0
 
 [node name="BottomCollision" type="CollisionShape2D" parent="Walls/Bottom" index="0"]
 
-position = Vector2( 47144.8, -44252.1 )
+position = Vector2( 9896.8, -43868.1 )
 shape = SubResource( 1 )
 
 [node name="Left" type="StaticBody2D" parent="Walls" index="2"]
 
+editor/display_folded = true
 position = Vector2( 87.2031, 56028.1 )
 input_pickable = false
 collision_layer = 1
@@ -100,11 +106,12 @@ bounce = 0.0
 
 [node name="LeftCollision" type="CollisionShape2D" parent="Walls/Left" index="0"]
 
-position = Vector2( 20136.8, -26972.1 )
+position = Vector2( 20392.8, -50268.1 )
 shape = SubResource( 2 )
 
 [node name="Right" type="StaticBody2D" parent="Walls" index="3"]
 
+editor/display_folded = true
 position = Vector2( -97974.8, 65118.4 )
 input_pickable = false
 collision_layer = 1
@@ -116,7 +123,7 @@ bounce = 0.0
 
 [node name="LeftCollision" type="CollisionShape2D" parent="Walls/Right" index="0"]
 
-position = Vector2( 96978.8, -26362 )
+position = Vector2( 96950.8, -58974.4 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
@@ -160,6 +167,7 @@ autostart = true
 
 [node name="AmebaPath" type="Path2D" parent="." index="5"]
 
+editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="AmebaSpawnPosition" type="PathFollow2D" parent="AmebaPath" index="0"]
@@ -176,9 +184,9 @@ lookahead = 4.0
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 0.0
-margin_right = 1152.0
+margin_right = 1088.0
 margin_bottom = 384.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
@@ -191,6 +199,44 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
+
+[node name="wall00" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 14917.5, 1433.98 )
+
+[node name="wall08" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 1812.78, 7070.08 )
+
+[node name="wall03" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 15374.1, 8445.02 )
+
+[node name="wall04" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 15447.7, 6410.33 )
+
+[node name="wall01" parent="." index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 7210.19, 1740.99 )
+
+[node name="wall06" parent="." index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 4930.12, 1549.93 )
+
+[node name="wall07" parent="." index="13" instance=ExtResource( 6 )]
+
+position = Vector2( 17000.1, 1293.75 )
+
+[node name="wall02" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 13655.3, 7205.11 )
+
+[node name="wall05" parent="." index="15" instance=ExtResource( 7 )]
+
+position = Vector2( 2545.28, 9160.61 )
+
+[connection signal="death" from="Player" to="." method="_on_Player_death"]
 
 [connection signal="timeout" from="AmebaTimer" to="." method="_on_AmebaTimer_timeout"]
 

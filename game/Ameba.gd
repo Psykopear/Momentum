@@ -22,7 +22,7 @@ func _process(delta):
 	# Update game logic here.
 	var to_target = Vector2()
 	if self.target:
-		to_target += (get_player().global_position - self.global_position)
+		to_target += (self.target.global_position - self.global_position)
 	else:
 		print("No Target")
 		to_target += rand_velocity

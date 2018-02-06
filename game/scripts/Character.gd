@@ -1,7 +1,8 @@
 extends Node2D
 
+signal death
 export var MOUSE = true
-export var hitpoints = 50
+export var hitpoints = 5
 
 func _ready():
 	get_node("./Body").set_mouse(MOUSE)
@@ -17,4 +18,4 @@ func _on_Body_body_entered( body ):
 	self.get_parent().get_node("ScoreLabel").text = 'HEALT: %s' % hitpoints
 	if hitpoints <= 0:
 		self.get_parent().get_node("ScoreLabel").text = 'GAME OVER'
-		set_process(false)
+		emit_signal('death')

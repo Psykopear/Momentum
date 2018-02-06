@@ -9,3 +9,8 @@ func _on_AmebaTimer_timeout():
 	var ameba = Ameba.instance()
 	add_child(ameba)
 	ameba.position = $AmebaPath/AmebaSpawnPosition.position
+
+func _on_Player_death():
+	$AmebaTimer.stop()
+	remove_child($Player)
+	

@@ -9,13 +9,9 @@ var MOUSE = true
 var JOYSTICK = false
 var _joint = null
 var _offset = Vector2(5000, 5000)
-var stunned = false
 
 func _ready():
-	set_process(true)
-	set_process_input(true)
 	get_node(hammer_joint).set_softness(min_softness)
-	connect("body_entered", self, "_on_body_entered")
 
 func set_mouse(val):
 	MOUSE = val
@@ -35,12 +31,7 @@ func _process(delta):
 		_velocity = _velocity.normalized()
 	
 	_velocity *= 1000000
-	
-	#if abs(_velocity.x) > max_speed or abs(_velocity.y) > max_speed:
-	#	_velocity = 
-	#	_velocity *= max_speed
-	if not stunned:
-			set_linear_velocity(_velocity * delta)
+	set_linear_velocity(_velocity * delta)
 
 func _input(event):
 	if MOUSE:
@@ -64,14 +55,3 @@ func _input(event):
 			else:
 				_joint.set_softness(min_softness)
 				_joint = null
-
-func _on_body_entered(body):
-	print("BODY")
-	if body.get_parent().get_name() == "Enemy" && body.get_linear_velocity().length() > 1000:
-		stunned = true
-		set_linear_velocity(body.get_linear_velocity())
-		get_node("./StunTimer").start()
-
-
-func _on_StunTimer_timeout():
-	stunned = false
