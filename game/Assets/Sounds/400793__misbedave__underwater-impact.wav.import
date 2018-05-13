@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/400793__misbedave__underwater-impact.wav-eb57cddc4e0e65e9808f8e1313e24d66.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/400793__misbedave__underwater-impact.wav"
+source_md5="3459820ed4e8f62f9971cef476c307f5"
+
+dest_files=[ "res://.import/400793__misbedave__underwater-impact.wav-eb57cddc4e0e65e9808f8e1313e24d66.sample" ]
+dest_md5="5d4a6103854f41c0b52ae5047475de46"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

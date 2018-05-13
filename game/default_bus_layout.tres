@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=6 format=2]
+[gd_resource type="AudioBusLayout" load_steps=8 format=2]
 
 [sub_resource type="AudioEffectReverb" id=1]
 
@@ -38,11 +38,35 @@ spread = 1.0
 hipass = 0.0
 dry = 1.0
 wet = 0.5
+_sections_unfolded = [ "Predelay", "Resource" ]
 
 [sub_resource type="AudioEffectPitchShift" id=5]
 
 resource_name = "PitchShift"
 pitch_scale = 1.0
+
+[sub_resource type="AudioEffectEQ10" id=6]
+
+resource_name = "EQ10"
+band_db/31_hz = 0.0
+band_db/62_hz = 0.0
+band_db/125_hz = 0.0
+band_db/250_hz = 0.0
+band_db/500_hz = 0.0
+band_db/1000_hz = 0.0
+band_db/2000_hz = 0.0
+band_db/4000_hz = 0.0
+band_db/8000_hz = 0.0
+band_db/16000_hz = 0.0
+
+[sub_resource type="AudioEffectPhaser" id=7]
+
+resource_name = "Phaser"
+range_min_hz = 350.0
+range_max_hz = 1600.0
+rate_hz = 0.49
+feedback = 0.7
+depth = 1.8
 
 [resource]
 
@@ -78,6 +102,10 @@ bus/3/name = "Music"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -15.9
+bus/3/volume_db = -73.5
 bus/3/send = "Master"
+bus/3/effect/0/effect = SubResource( 6 )
+bus/3/effect/0/enabled = false
+bus/3/effect/1/effect = SubResource( 7 )
+bus/3/effect/1/enabled = true
 

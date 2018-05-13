@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/397986__morganpurkis__meaty-gunshot-underwater.wav-908e1e1043035bdeefbc1b422b386150.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/397986__morganpurkis__meaty-gunshot-underwater.wav"
+source_md5="d5a73da9fa95ca53d0f6406527d20fa9"
+
+dest_files=[ "res://.import/397986__morganpurkis__meaty-gunshot-underwater.wav-908e1e1043035bdeefbc1b422b386150.sample" ]
+dest_md5="a65974ce3fdbbd76817efe6fa8a5eb75"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
