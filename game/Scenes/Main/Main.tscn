@@ -1,25 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemy/Ameba.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player/Character.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Main/AmebaTimer.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sounds/Seldon.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Sounds/Background.wav" type="AudioStream" id=6]
-[ext_resource path="res://Scenes/Level/wall00.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Level/wall01.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Level/wall02.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Main/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Main/Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Main/AmebaTimer.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/Seldon.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/Background.wav" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Level/wall00.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Level/wall01.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Level/wall02.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Main/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10000, 3712 )
+extents = Vector2( 35116.3, 3712 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4992, 10000 )
+extents = Vector2( 4992, 16945.2 )
 
 [sub_resource type="Curve2D" id=3]
 
@@ -27,6 +28,7 @@ bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19200, 0, 0, 0, 0, 0, 19328, 11008, 0, 0, 0, 0, 0, 11008, 0, 0, 0, 0, 0, 0 )
 }
+_sections_unfolded = [ "Resource" ]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -40,8 +42,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 19264.0
-margin_bottom = 10944.0
+margin_right = 57920.0
+margin_bottom = 32960.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -53,11 +55,8 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect" ]
 
 [node name="Walls" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -68,12 +67,11 @@ bounce = 0.0
 
 [node name="UpperCollision" type="CollisionShape2D" parent="Walls/Upper" index="0"]
 
-position = Vector2( 9856, -3712 )
+position = Vector2( 31280.2, -3712 )
 shape = SubResource( 1 )
 
 [node name="Bottom" type="StaticBody2D" parent="Walls" index="1"]
 
-editor/display_folded = true
 position = Vector2( 87.2031, 56028.1 )
 input_pickable = false
 collision_layer = 1
@@ -85,12 +83,11 @@ bounce = 0.0
 
 [node name="BottomCollision" type="CollisionShape2D" parent="Walls/Bottom" index="0"]
 
-position = Vector2( 9896.8, -41308.1 )
+position = Vector2( 29303.5, -19115.3 )
 shape = SubResource( 1 )
 
 [node name="Left" type="StaticBody2D" parent="Walls" index="2"]
 
-editor/display_folded = true
 position = Vector2( 87.2031, 56028.1 )
 input_pickable = false
 collision_layer = 1
@@ -102,12 +99,11 @@ bounce = 0.0
 
 [node name="LeftCollision" type="CollisionShape2D" parent="Walls/Left" index="0"]
 
-position = Vector2( 24271.8, -51597.9 )
+position = Vector2( 62989.1, -39588.8 )
 shape = SubResource( 2 )
 
 [node name="Right" type="StaticBody2D" parent="Walls" index="3"]
 
-editor/display_folded = true
 position = Vector2( -97974.8, 65118.4 )
 input_pickable = false
 collision_layer = 1
@@ -119,20 +115,20 @@ bounce = 0.0
 
 [node name="LeftCollision" type="CollisionShape2D" parent="Walls/Right" index="0"]
 
-position = Vector2( 92854.8, -58974.4 )
+position = Vector2( 92854.8, -48982.8 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 5000, 5000 )
-MOUSE = true
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
-anchor_mode = 0
+offset = Vector2( 28992, 16512 )
+anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 10, 10 )
+zoom = Vector2( 30, 30 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -151,6 +147,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="AmebaTimer" type="Timer" parent="." index="4"]
@@ -159,7 +156,7 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = false
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="AmebaTimerTimer" type="Timer" parent="AmebaTimer" index="0"]
 
@@ -170,8 +167,9 @@ autostart = true
 
 [node name="AmebaPath" type="Path2D" parent="." index="5"]
 
-editor/display_folded = true
+scale = Vector2( 3.0015, 2.98842 )
 curve = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="AmebaSpawnPosition" type="PathFollow2D" parent="AmebaPath" index="0"]
 
@@ -189,7 +187,7 @@ editor/display_folded = true
 
 [node name="Music2" type="AudioStreamPlayer" parent="Music" index="0"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
@@ -197,27 +195,29 @@ bus = "Music"
 
 [node name="Music" type="AudioStreamPlayer" parent="Music" index="1"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Background"
 
-[node name="wall00" parent="." index="7" instance=ExtResource( 7 )]
+[node name="wall00" parent="." index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 11261.6, 3518.14 )
 
-[node name="wall01" parent="." index="8" instance=ExtResource( 8 )]
+[node name="wall01" parent="." index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 3695.01, 7746.55 )
 
-[node name="wall02" parent="." index="9" instance=ExtResource( 9 )]
+[node name="wall02" parent="." index="9" instance=ExtResource( 10 )]
 
 position = Vector2( 16558.3, 8992.82 )
 
-[node name="HUD" parent="." index="10" instance=ExtResource( 10 )]
+[node name="HUD" parent="." index="10" instance=ExtResource( 11 )]
 
 [connection signal="death" from="Player" to="." method="_on_Player_death"]
+
+[connection signal="timeout" from="AmebaTimer" to="Camera2D" method="_on_AmebaTimer_timeout"]
 
 [connection signal="timeout" from="AmebaTimer" to="." method="_on_AmebaTimer_timeout"]
 

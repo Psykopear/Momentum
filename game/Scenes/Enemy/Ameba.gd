@@ -8,7 +8,7 @@ var target = null
 var rand_velocity = Vector2(0, 0)
 var hitpoints = 2
 
-var amebadeath = load('res://AmebaDeath.tscn')
+var amebadeath = load('res://Scenes/Enemy/AmebaDeath.tscn')
 
 func _ready():
 	self.target = get_player()

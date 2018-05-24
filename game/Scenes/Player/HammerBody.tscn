@@ -194,6 +194,4 @@ anims/rotate = SubResource( 5 )
 blend_times = [  ]
 _sections_unfolded = [ "Pause", "Playback Options" ]
 
-[connection signal="tree_entered" from="Central/Player" to="." method="_on_Player_tree_entered"]
-
 
