@@ -7,10 +7,10 @@ path="res://.import/Seldon.wav-95ced536d930a9eaac68b55b8bdcd4c8.sample"
 [deps]
 
 source_file="res://Assets/Sounds/Seldon.wav"
-source_md5="a927b6b15e8cb7980849926742e6dbf6"
+source_md5="93574c43105456eb6018806f2abc73e2"
 
 dest_files=[ "res://.import/Seldon.wav-95ced536d930a9eaac68b55b8bdcd4c8.sample" ]
-dest_md5="71b4ac5477c5e1c1585117307385e166"
+dest_md5="fce9f87848678a4e08dc9c4c94585435"
 
 [params]
 

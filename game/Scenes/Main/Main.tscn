@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemy/Ameba.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player/Character.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/Main/AmebaTimer.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sounds/Seldon.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sounds/Background.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Level/wall00.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Level/wall01.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Level/wall02.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Main/HUD.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -26,127 +27,6 @@ bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19200, 0, 0, 0, 0, 0, 19328, 11008, 0, 0, 0, 0, 0, 11008, 0, 0, 0, 0, 0, 0 )
 }
-
-[sub_resource type="StyleBoxFlat" id=4]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 1, 1, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=5]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.910156, 0, 0, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.195312, 0.0244141, 0.0244141, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0.15625, 0.0292969, 0.0292969, 0.6 )
-shadow_size = 20
-anti_aliasing = true
-anti_aliasing_size = 1
-_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Shadow" ]
-
-[sub_resource type="StyleBoxFlat" id=6]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 1, 1, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=7]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 0.898438, 0.898438, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="DynamicFont" id=8]
-
-size = 500
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 4 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -173,8 +53,11 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect" ]
 
 [node name="Walls" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -190,6 +73,7 @@ shape = SubResource( 1 )
 
 [node name="Bottom" type="StaticBody2D" parent="Walls" index="1"]
 
+editor/display_folded = true
 position = Vector2( 87.2031, 56028.1 )
 input_pickable = false
 collision_layer = 1
@@ -206,6 +90,7 @@ shape = SubResource( 1 )
 
 [node name="Left" type="StaticBody2D" parent="Walls" index="2"]
 
+editor/display_folded = true
 position = Vector2( 87.2031, 56028.1 )
 input_pickable = false
 collision_layer = 1
@@ -222,6 +107,7 @@ shape = SubResource( 2 )
 
 [node name="Right" type="StaticBody2D" parent="Walls" index="3"]
 
+editor/display_folded = true
 position = Vector2( -97974.8, 65118.4 )
 input_pickable = false
 collision_layer = 1
@@ -270,8 +156,16 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="AmebaTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.5
 one_shot = false
+autostart = false
+script = ExtResource( 4 )
+
+[node name="AmebaTimerTimer" type="Timer" parent="AmebaTimer" index="0"]
+
+process_mode = 1
+wait_time = 15.4
+one_shot = true
 autostart = true
 
 [node name="AmebaPath" type="Path2D" parent="." index="5"]
@@ -289,58 +183,9 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="LifeBar" type="HScrollBar" parent="." index="6"]
+[node name="Music" type="Node2D" parent="." index="6"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 2.0
-margin_right = 3586.0
-margin_bottom = 640.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-custom_styles/grabber_highlight = SubResource( 4 )
-custom_styles/grabber = SubResource( 5 )
-custom_styles/scroll_focus = SubResource( 6 )
-custom_styles/scroll = SubResource( 7 )
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 100.0
-exp_edit = false
-rounded = true
-custom_step = -1.0
-_sections_unfolded = [ "Theme", "custom_styles" ]
-
-[node name="ScoreLabel" type="Label" parent="." index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_top = 640.0
-margin_right = 3236.0
-margin_bottom = 1240.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
-text = "HEALTH: 50"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
-
-[node name="Music" type="Node2D" parent="." index="8"]
+editor/display_folded = true
 
 [node name="Music2" type="AudioStreamPlayer" parent="Music" index="0"]
 
@@ -358,20 +203,24 @@ autoplay = false
 mix_target = 0
 bus = "Background"
 
-[node name="wall00" parent="." index="9" instance=ExtResource( 7 )]
+[node name="wall00" parent="." index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 11261.6, 3518.14 )
 
-[node name="wall01" parent="." index="10" instance=ExtResource( 8 )]
+[node name="wall01" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 3695.01, 7746.55 )
 
-[node name="wall02" parent="." index="11" instance=ExtResource( 9 )]
+[node name="wall02" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 16558.3, 8992.82 )
+
+[node name="HUD" parent="." index="10" instance=ExtResource( 10 )]
 
 [connection signal="death" from="Player" to="." method="_on_Player_death"]
 
 [connection signal="timeout" from="AmebaTimer" to="." method="_on_AmebaTimer_timeout"]
+
+[connection signal="timeout" from="AmebaTimer/AmebaTimerTimer" to="AmebaTimer" method="_on_AmebaTimerTimer_timeout" flags=6]
 
 

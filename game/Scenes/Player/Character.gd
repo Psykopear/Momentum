@@ -14,10 +14,10 @@ func _on_Body_body_entered( body ):
 	$Body/Glow.apply_scale(Vector2(5,5))
 	$Body/GlowTimer.start()
 	hitpoints -= 1
-	self.get_parent().get_node("ScoreLabel").text = 'HEALT: %s' % hitpoints
-	get_parent().get_node("LifeBar").value = hitpoints
+	self.get_parent().get_node("HUD/ScoreLabel").text = 'HEALT: %s' % hitpoints
+	get_parent().get_node("HUD/LifeBar").value = hitpoints
 	if hitpoints <= 0:
-		self.get_parent().get_node("ScoreLabel").text = 'GAME OVER'
+		self.get_parent().get_node("HUD/ScoreLabel").text = 'GAME OVER'
 		emit_signal('death')
 
 
