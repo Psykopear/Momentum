@@ -121,6 +121,7 @@ shape = SubResource( 2 )
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 5000, 5000 )
+MOUSE = true
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
