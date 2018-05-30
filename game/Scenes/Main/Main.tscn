@@ -30,7 +30,7 @@ _data = {
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -54,6 +54,8 @@ color = Color( 0.34375, 0.128906, 0.128906, 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect" ]
 
 [node name="Walls" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="Upper" type="StaticBody2D" parent="Walls" index="0"]
 
@@ -153,6 +155,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="AmebaTimer" type="Timer" parent="." index="4"]
 
+editor/display_folded = true
 process_mode = 1
 wait_time = 0.5
 one_shot = false
@@ -168,6 +171,7 @@ autostart = true
 
 [node name="AmebaPath" type="Path2D" parent="." index="5"]
 
+editor/display_folded = true
 scale = Vector2( 3.0015, 2.98842 )
 curve = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
